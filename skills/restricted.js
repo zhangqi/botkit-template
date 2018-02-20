@@ -1,14 +1,15 @@
 module.exports = function (controller) {
 
-    controller.hears([/^restricted$/], "direct_message,direct_mention", function (bot, message) {
+    controller.hears([/^Did you have lunch?$/], "direct_message,direct_mention", function (bot, message) {
 
         bot.startConversation(message, function (err, convo) {
-
-            convo.ask("What is your favorite color?", [
+            convo.say("No, i'm in meeting.");
+            convo.ask("Did you have lunch?", [
                 {
-                    pattern: "^blue|green|pink|red|yellow$",
+                    pattern: "^yes|no$",
                     callback: function (response, convo) {
-                        convo.say('Cool, I like ' + response.text + ' too!');
+                        // convo.say('Cool, I like ' + response.text + ' too!');
+                        convo.say('ok');
                         convo.next();
                     },
                 },
