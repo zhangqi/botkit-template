@@ -11,7 +11,7 @@ module.exports = function (controller) {
             //     convo.next();
             // });
             convo.ask('How are you today?', function (response, convo) {
-                convo.say("Cool, happy to know your day is '" + response.text);
+                convo.say("Cool, happy to know your day is " + response.text);
                 convo.next();
             });
         });
